@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.create_billing_checkout_request import CreateBillingCheckoutRequest
+from griffnode.models.create_billing_checkout_request import CreateBillingCheckoutRequest
 
 # TODO update the JSON string below
 json = "{}"

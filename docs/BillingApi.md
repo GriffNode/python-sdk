@@ -1,6 +1,6 @@
-# cryptogate.BillingApi
+# griffnode.BillingApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,16 +17,16 @@ Start a plan upgrade or account top-up
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.create_billing_checkout_request import CreateBillingCheckoutRequest
-from cryptogate.models.transaction_envelope import TransactionEnvelope
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.create_billing_checkout_request import CreateBillingCheckoutRequest
+from griffnode.models.transaction_envelope import TransactionEnvelope
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -35,15 +35,15 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.BillingApi(api_client)
-    create_billing_checkout_request = cryptogate.CreateBillingCheckoutRequest() # CreateBillingCheckoutRequest | 
+    api_instance = griffnode.BillingApi(api_client)
+    create_billing_checkout_request = griffnode.CreateBillingCheckoutRequest() # CreateBillingCheckoutRequest | 
 
     try:
         # Start a plan upgrade or account top-up

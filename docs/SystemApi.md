@@ -1,6 +1,6 @@
-# cryptogate.SystemApi
+# griffnode.SystemApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,22 +17,22 @@ API health check
 
 
 ```python
-import cryptogate
-from cryptogate.models.get_health200_response import GetHealth200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.get_health200_response import GetHealth200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.SystemApi(api_client)
+    api_instance = griffnode.SystemApi(api_client)
 
     try:
         # API health check
@@ -81,25 +81,25 @@ Browser-facing redirect to the hosted payment page, authenticated by a **publish
 
 
 ```python
-import cryptogate
-from cryptogate.models.crypto_symbol import CryptoSymbol
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.crypto_symbol import CryptoSymbol
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.SystemApi(api_client)
+    api_instance = griffnode.SystemApi(api_client)
     pk = 'pk_example' # str | Publishable key, pk_live_… / pk_test_…
     amount = 'amount_example' # str | Fiat amount (≥ 1.00 USD equivalent).
-    crypto = cryptogate.CryptoSymbol() # CryptoSymbol | 
+    crypto = griffnode.CryptoSymbol() # CryptoSymbol | 
     link = 'link_example' # str | Payment-link slug for attribution. (optional)
 
     try:
@@ -138,7 +138,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**302** | Redirect to https://cryptogate.live/transaction/{transaction_id} |  -  |
+**302** | Redirect to https://griffnode.com/transaction/{transaction_id} |  -  |
 **400** | Validation error (INVALID_REQUEST, INVALID_CRYPTO, INVALID_AMOUNT, AMOUNT_TOO_LOW, INVALID_CURRENCY, INVALID_METADATA, WALLET_NOT_CONFIGURED, MISSING_ITEMS, MISSING_ORDER_ID, …). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.line_item import LineItem
+from griffnode.models.line_item import LineItem
 
 # TODO update the JSON string below
 json = "{}"

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.pagination import Pagination
+from griffnode.models.pagination import Pagination
 
 # TODO update the JSON string below
 json = "{}"

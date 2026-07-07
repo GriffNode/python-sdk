@@ -1,13 +1,13 @@
-# cryptogate.AccountApi
+# griffnode.AccountApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account**](AccountApi.md#get_account) | **GET** /account | Merchant plan, usage and limits
 [**get_stats**](AccountApi.md#get_stats) | **GET** /stats | Merchant transaction analytics
 [**list_balances**](AccountApi.md#list_balances) | **GET** /balances | On-platform balances (for overage/top-up; NOT crypto settlement)
-[**list_invoices**](AccountApi.md#list_invoices) | **GET** /invoices | CryptoGate billing invoices (platform ↔ merchant)
+[**list_invoices**](AccountApi.md#list_invoices) | **GET** /invoices | GriffNode billing invoices (platform ↔ merchant)
 [**list_plans**](AccountApi.md#list_plans) | **GET** /plans | Plan catalogue and pricing
 
 
@@ -21,15 +21,15 @@ Merchant plan, usage and limits
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.get_account200_response import GetAccount200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.get_account200_response import GetAccount200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -38,14 +38,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.AccountApi(api_client)
+    api_instance = griffnode.AccountApi(api_client)
 
     try:
         # Merchant plan, usage and limits
@@ -95,15 +95,15 @@ Merchant transaction analytics
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.get_stats200_response import GetStats200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.get_stats200_response import GetStats200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,14 +112,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.AccountApi(api_client)
+    api_instance = griffnode.AccountApi(api_client)
 
     try:
         # Merchant transaction analytics
@@ -169,15 +169,15 @@ On-platform balances (for overage/top-up; NOT crypto settlement)
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.list_balances200_response import ListBalances200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.list_balances200_response import ListBalances200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -186,14 +186,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.AccountApi(api_client)
+    api_instance = griffnode.AccountApi(api_client)
 
     try:
         # On-platform balances (for overage/top-up; NOT crypto settlement)
@@ -236,22 +236,22 @@ This endpoint does not need any parameter.
 # **list_invoices**
 > ListInvoices200Response list_invoices(limit=limit, offset=offset)
 
-CryptoGate billing invoices (platform ↔ merchant)
+GriffNode billing invoices (platform ↔ merchant)
 
 ### Example
 
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.list_invoices200_response import ListInvoices200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.list_invoices200_response import ListInvoices200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -260,19 +260,19 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.AccountApi(api_client)
+    api_instance = griffnode.AccountApi(api_client)
     limit = 20 # int |  (optional) (default to 20)
     offset = 0 # int |  (optional) (default to 0)
 
     try:
-        # CryptoGate billing invoices (platform ↔ merchant)
+        # GriffNode billing invoices (platform ↔ merchant)
         api_response = api_instance.list_invoices(limit=limit, offset=offset)
         print("The response of AccountApi->list_invoices:\n")
         pprint(api_response)
@@ -323,15 +323,15 @@ Plan catalogue and pricing
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.list_plans200_response import ListPlans200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.list_plans200_response import ListPlans200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -340,14 +340,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.AccountApi(api_client)
+    api_instance = griffnode.AccountApi(api_client)
 
     try:
         # Plan catalogue and pricing

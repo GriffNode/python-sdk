@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.webhook_payload import WebhookPayload
+from griffnode.models.webhook_payload import WebhookPayload
 
 # TODO update the JSON string below
 json = "{}"

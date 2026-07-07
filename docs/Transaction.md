@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.transaction import Transaction
+from griffnode.models.transaction import Transaction
 
 # TODO update the JSON string below
 json = "{}"

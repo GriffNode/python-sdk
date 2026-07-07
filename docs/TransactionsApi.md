@@ -1,6 +1,6 @@
-# cryptogate.TransactionsApi
+# griffnode.TransactionsApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,16 +20,16 @@ Create an itemized transaction (Professional/Enterprise plans)
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.create_detailed_transaction_request import CreateDetailedTransactionRequest
-from cryptogate.models.transaction_envelope import TransactionEnvelope
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.create_detailed_transaction_request import CreateDetailedTransactionRequest
+from griffnode.models.transaction_envelope import TransactionEnvelope
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -38,15 +38,15 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.TransactionsApi(api_client)
-    create_detailed_transaction_request = cryptogate.CreateDetailedTransactionRequest() # CreateDetailedTransactionRequest | 
+    api_instance = griffnode.TransactionsApi(api_client)
+    create_detailed_transaction_request = griffnode.CreateDetailedTransactionRequest() # CreateDetailedTransactionRequest | 
     x_idempotency_key = 'x_idempotency_key_example' # str | Optional unique key for a create request (e.g. a UUID). A retried create with the same key returns the original transaction instead of creating a duplicate — send it on every create so a network retry can't double-charge the customer.  (optional)
 
     try:
@@ -104,16 +104,16 @@ Create a payment transaction
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.create_transaction_request import CreateTransactionRequest
-from cryptogate.models.transaction_envelope import TransactionEnvelope
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.create_transaction_request import CreateTransactionRequest
+from griffnode.models.transaction_envelope import TransactionEnvelope
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -122,15 +122,15 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.TransactionsApi(api_client)
-    create_transaction_request = cryptogate.CreateTransactionRequest() # CreateTransactionRequest | 
+    api_instance = griffnode.TransactionsApi(api_client)
+    create_transaction_request = griffnode.CreateTransactionRequest() # CreateTransactionRequest | 
     x_idempotency_key = 'x_idempotency_key_example' # str | Optional unique key for a create request (e.g. a UUID). A retried create with the same key returns the original transaction instead of creating a duplicate — send it on every create so a network retry can't double-charge the customer.  (optional)
 
     try:
@@ -189,15 +189,15 @@ Retrieve a single transaction
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.transaction_envelope import TransactionEnvelope
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.transaction_envelope import TransactionEnvelope
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -206,14 +206,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.TransactionsApi(api_client)
+    api_instance = griffnode.TransactionsApi(api_client)
     transaction_id = 'transaction_id_example' # str | 
 
     try:
@@ -268,17 +268,17 @@ List the merchant's transactions (newest first)
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.crypto_symbol import CryptoSymbol
-from cryptogate.models.list_transactions200_response import ListTransactions200Response
-from cryptogate.models.transaction_status import TransactionStatus
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.crypto_symbol import CryptoSymbol
+from griffnode.models.list_transactions200_response import ListTransactions200Response
+from griffnode.models.transaction_status import TransactionStatus
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -287,18 +287,18 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.TransactionsApi(api_client)
+    api_instance = griffnode.TransactionsApi(api_client)
     limit = 20 # int |  (optional) (default to 20)
     offset = 0 # int |  (optional) (default to 0)
-    status = cryptogate.TransactionStatus() # TransactionStatus |  (optional)
-    crypto = cryptogate.CryptoSymbol() # CryptoSymbol |  (optional)
+    status = griffnode.TransactionStatus() # TransactionStatus |  (optional)
+    crypto = griffnode.CryptoSymbol() # CryptoSymbol |  (optional)
 
     try:
         # List the merchant's transactions (newest first)

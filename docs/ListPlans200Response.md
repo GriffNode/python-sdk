@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.list_plans200_response import ListPlans200Response
+from griffnode.models.list_plans200_response import ListPlans200Response
 
 # TODO update the JSON string below
 json = "{}"

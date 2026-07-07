@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    CryptoGate API
+    GriffNode API
 
     Accept Bitcoin, Litecoin, Dogecoin, Dash, Ethereum and ERC-20 tokens. Server-to-server, authenticated with a secret API key (`Authorization: Bearer sk_live_…` for live, or `sk_test_…` for test mode — same base URL). All monetary amounts in API responses are JSON numbers; **webhook** amounts are strings to preserve decimal precision (see the `webhooks` section).  **Rate limits.** Every request is rate-limited per API key in two windows — per minute and per hour — by plan tier (min/hour): starter 30/500, business 100/2000, professional 300/5000, enterprise 1000/20000. Every response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` (Unix seconds) for the per-minute window. On `429` the body is `error: \"RATE_LIMIT_EXCEEDED\"` (either window) with a `Retry-After` header (seconds) — clients should retry after it. A separate `429` with `error: \"MONTHLY_LIMIT_REACHED\"` means the plan's monthly transaction quota (not the request rate). 
 
@@ -20,7 +20,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "cryptogate"
+NAME = "griffnode"
 VERSION = "0.1.0"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
@@ -33,11 +33,11 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="CryptoGate API",
-    author="CryptoGate Developers",
+    description="GriffNode API",
+    author="GriffNode Developers",
     author_email="team@openapitools.org",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "CryptoGate API"],
+    keywords=["OpenAPI", "OpenAPI-Generator", "GriffNode API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
@@ -46,5 +46,5 @@ setup(
     long_description="""\
     Accept Bitcoin, Litecoin, Dogecoin, Dash, Ethereum and ERC-20 tokens. Server-to-server, authenticated with a secret API key (&#x60;Authorization: Bearer sk_live_…&#x60; for live, or &#x60;sk_test_…&#x60; for test mode — same base URL). All monetary amounts in API responses are JSON numbers; **webhook** amounts are strings to preserve decimal precision (see the &#x60;webhooks&#x60; section).  **Rate limits.** Every request is rate-limited per API key in two windows — per minute and per hour — by plan tier (min/hour): starter 30/500, business 100/2000, professional 300/5000, enterprise 1000/20000. Every response carries &#x60;X-RateLimit-Limit&#x60;, &#x60;X-RateLimit-Remaining&#x60; and &#x60;X-RateLimit-Reset&#x60; (Unix seconds) for the per-minute window. On &#x60;429&#x60; the body is &#x60;error: \&quot;RATE_LIMIT_EXCEEDED\&quot;&#x60; (either window) with a &#x60;Retry-After&#x60; header (seconds) — clients should retry after it. A separate &#x60;429&#x60; with &#x60;error: \&quot;MONTHLY_LIMIT_REACHED\&quot;&#x60; means the plan&#39;s monthly transaction quota (not the request rate). 
     """,  # noqa: E501
-    package_data={"cryptogate": ["py.typed"]},
+    package_data={"griffnode": ["py.typed"]},
 )

@@ -1,6 +1,6 @@
-# cryptogate.MarketDataApi
+# griffnode.MarketDataApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,15 +19,15 @@ Current crypto and fiat exchange rates (USD-denominated)
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.get_prices200_response import GetPrices200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.get_prices200_response import GetPrices200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -36,14 +36,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.MarketDataApi(api_client)
+    api_instance = griffnode.MarketDataApi(api_client)
 
     try:
         # Current crypto and fiat exchange rates (USD-denominated)
@@ -93,15 +93,15 @@ All supported cryptocurrencies and tokens
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.list_cryptocurrencies200_response import ListCryptocurrencies200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.list_cryptocurrencies200_response import ListCryptocurrencies200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -110,14 +110,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.MarketDataApi(api_client)
+    api_instance = griffnode.MarketDataApi(api_client)
 
     try:
         # All supported cryptocurrencies and tokens
@@ -166,15 +166,15 @@ Cryptocurrencies this merchant has wallets configured for
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.models.list_cryptocurrencies200_response import ListCryptocurrencies200Response
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.models.list_cryptocurrencies200_response import ListCryptocurrencies200Response
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -183,14 +183,14 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.MarketDataApi(api_client)
+    api_instance = griffnode.MarketDataApi(api_client)
 
     try:
         # Cryptocurrencies this merchant has wallets configured for

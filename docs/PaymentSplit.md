@@ -6,7 +6,7 @@ One on-chain payment toward the transaction.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**txid** | **str** | On-chain transaction hash (blockchain id, NOT the CryptoGate transaction_id). | [optional] 
+**txid** | **str** | On-chain transaction hash (blockchain id, NOT the GriffNode transaction_id). | [optional] 
 **amount_crypto** | **float** |  | [optional] 
 **confirmations** | **int** |  | [optional] 
 **status** | **str** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from cryptogate.models.payment_split import PaymentSplit
+from griffnode.models.payment_split import PaymentSplit
 
 # TODO update the JSON string below
 json = "{}"

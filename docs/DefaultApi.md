@@ -1,6 +1,6 @@
-# cryptogate.DefaultApi
+# griffnode.DefaultApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,21 +12,21 @@ Method | HTTP request | Description
 
 Payment lifecycle event delivered to the merchant's webhook URL
 
-Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-CryptoGate-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-CryptoGate-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
+Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-GriffNode-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-GriffNode-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
 
 ### Example
 
 * Bearer Authentication (SecretKey):
 
 ```python
-import cryptogate
-from cryptogate.rest import ApiException
+import griffnode
+from griffnode.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.cryptogate.live/v1
+# Defining the host is optional and defaults to https://api.griffnode.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = cryptogate.Configuration(
-    host = "https://api.cryptogate.live/v1"
+configuration = griffnode.Configuration(
+    host = "https://api.griffnode.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -35,15 +35,15 @@ configuration = cryptogate.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: SecretKey
-configuration = cryptogate.Configuration(
+configuration = griffnode.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with cryptogate.ApiClient(configuration) as api_client:
+with griffnode.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = cryptogate.DefaultApi(api_client)
-    webhook_payload = cryptogate.WebhookPayload() # WebhookPayload |  (optional)
+    api_instance = griffnode.DefaultApi(api_client)
+    webhook_payload = griffnode.WebhookPayload() # WebhookPayload |  (optional)
 
     try:
         # Payment lifecycle event delivered to the merchant's webhook URL
