@@ -17,7 +17,7 @@ jobs:
             openapitools/openapi-generator-cli:v7.10.0 \
             generate -i /local/openapi.yaml -g python -o /local \
             --skip-validate-spec \
-            --additional-properties=packageName=cryptogate,projectName=cryptogate,packageVersion=0.1.0
+            --additional-properties=packageName=griffnode,projectName=griffnode,packageVersion=0.1.0
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"
