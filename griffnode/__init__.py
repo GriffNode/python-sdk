@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 # import apis into sdk package
 from griffnode.api.account_api import AccountApi

@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "griffnode"
-VERSION = "0.1.0"
+VERSION = "1.0.0"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
@@ -36,7 +36,7 @@ setup(
     description="GriffNode API",
     author="GriffNode Developers",
     author_email="team@openapitools.org",
-    url="",
+    url="https://griffnode.com",
     keywords=["OpenAPI", "OpenAPI-Generator", "GriffNode API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
