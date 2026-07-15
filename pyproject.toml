@@ -1,12 +1,14 @@
 [tool.poetry]
 name = "griffnode"
 version = "1.0.0"
-description = "GriffNode API"
-authors = ["GriffNode Developers <team@openapitools.org>"]
+description = "Official GriffNode SDK. Non-custodial crypto payment gateway: accept BTC, ETH, LTC, DOGE, DASH and ERC-20 tokens straight to your own wallet."
+authors = ["GriffNode <dev@griffnode.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
-keywords = ["OpenAPI", "OpenAPI-Generator", "GriffNode API"]
+homepage = "https://griffnode.com"
+repository = "https://github.com/GriffNode/python-sdk"
+documentation = "https://docs.griffnode.com/reference"
+keywords = ["griffnode", "crypto", "payments", "bitcoin", "ethereum", "payment-gateway", "non-custodial"]
 include = ["griffnode/py.typed"]
 
 [tool.poetry.dependencies]
