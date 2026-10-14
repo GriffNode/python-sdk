@@ -73,5 +73,6 @@ from griffnode.models.plan import Plan
 from griffnode.models.plan_tier import PlanTier
 from griffnode.models.transaction import Transaction
 from griffnode.models.transaction_envelope import TransactionEnvelope
+from griffnode.models.transaction_exception import TransactionException
 from griffnode.models.transaction_status import TransactionStatus
 from griffnode.models.webhook_payload import WebhookPayload

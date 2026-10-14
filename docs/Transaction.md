@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transaction_id** | **str** |  | 
 **status** | [**TransactionStatus**](TransactionStatus.md) |  | 
+**exception** | [**TransactionException**](TransactionException.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **crypto** | [**CryptoSymbol**](CryptoSymbol.md) |  | 
 **deposit_address** | **str** |  | [optional] 

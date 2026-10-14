@@ -43,6 +43,7 @@ docs/PlanTier.md
 docs/SystemApi.md
 docs/Transaction.md
 docs/TransactionEnvelope.md
+docs/TransactionException.md
 docs/TransactionStatus.md
 docs/TransactionsApi.md
 docs/WebhookPayload.md
@@ -98,6 +99,7 @@ griffnode/models/plan.py
 griffnode/models/plan_tier.py
 griffnode/models/transaction.py
 griffnode/models/transaction_envelope.py
+griffnode/models/transaction_exception.py
 griffnode/models/transaction_status.py
 griffnode/models/webhook_payload.py
 griffnode/py.typed
@@ -108,4 +110,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_transaction_exception.py
 tox.ini

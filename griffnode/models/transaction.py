@@ -24,6 +24,7 @@ from griffnode.models.crypto_symbol import CryptoSymbol
 from griffnode.models.fiat_currency import FiatCurrency
 from griffnode.models.line_item import LineItem
 from griffnode.models.payment_split import PaymentSplit
+from griffnode.models.transaction_exception import TransactionException
 from griffnode.models.transaction_status import TransactionStatus
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,6 +35,7 @@ class Transaction(BaseModel):
     """ # noqa: E501
     transaction_id: StrictStr
     status: TransactionStatus
+    exception: Optional[TransactionException] = None
     type: Optional[StrictStr] = None
     crypto: CryptoSymbol
     deposit_address: Optional[StrictStr] = None
@@ -57,7 +59,7 @@ class Transaction(BaseModel):
     created_at: datetime
     updated_at: Optional[datetime] = None
     expires_at: datetime
-    __properties: ClassVar[List[str]] = ["transaction_id", "status", "type", "crypto", "deposit_address", "amount_crypto", "amount_fiat", "amount_usd", "amount_paid", "amount_remaining", "currency_fiat", "fiat_to_usd_rate", "exchange_rate", "confirmations_required", "payment_url", "order_id", "customer_email", "items", "payments", "metadata", "success_url", "cancel_url", "created_at", "updated_at", "expires_at"]
+    __properties: ClassVar[List[str]] = ["transaction_id", "status", "exception", "type", "crypto", "deposit_address", "amount_crypto", "amount_fiat", "amount_usd", "amount_paid", "amount_remaining", "currency_fiat", "fiat_to_usd_rate", "exchange_rate", "confirmations_required", "payment_url", "order_id", "customer_email", "items", "payments", "metadata", "success_url", "cancel_url", "created_at", "updated_at", "expires_at"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -161,6 +163,7 @@ class Transaction(BaseModel):
         _obj = cls.model_validate({
             "transaction_id": obj.get("transaction_id"),
             "status": obj.get("status"),
+            "exception": obj.get("exception"),
             "type": obj.get("type"),
             "crypto": obj.get("crypto"),
             "deposit_address": obj.get("deposit_address"),
