@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | 
 **transaction_id** | **str** |  | 
 **status** | [**TransactionStatus**](TransactionStatus.md) |  | 
+**exception** | [**TransactionException**](TransactionException.md) |  | [optional] 
 **currency_crypto** | [**CryptoSymbol**](CryptoSymbol.md) |  | [optional] 
 **currency_fiat** | [**FiatCurrency**](FiatCurrency.md) |  | [optional] [default to FiatCurrency.USD]
 **amount_fiat** | **str** | Decimal string. | [optional] 

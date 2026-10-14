@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from griffnode.models.crypto_symbol import CryptoSymbol
 from griffnode.models.fiat_currency import FiatCurrency
+from griffnode.models.transaction_exception import TransactionException
 from griffnode.models.transaction_status import TransactionStatus
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,6 +35,7 @@ class WebhookPayload(BaseModel):
     timestamp: datetime
     transaction_id: StrictStr
     status: TransactionStatus
+    exception: Optional[TransactionException] = None
     currency_crypto: Optional[CryptoSymbol] = None
     currency_fiat: Optional[FiatCurrency] = FiatCurrency.USD
     amount_fiat: Optional[StrictStr] = Field(default=None, description="Decimal string.")
@@ -42,13 +44,13 @@ class WebhookPayload(BaseModel):
     order_id: Optional[StrictStr] = None
     receipt_url: Optional[StrictStr] = Field(default=None, description="Present on completed/overpaid.")
     metadata: Optional[Dict[str, StrictStr]] = Field(default=None, description="Free-form key/value (≤20 keys, string values ≤500 chars, ≤4 KB total).")
-    __properties: ClassVar[List[str]] = ["event", "timestamp", "transaction_id", "status", "currency_crypto", "currency_fiat", "amount_fiat", "amount_usd", "amount_crypto", "order_id", "receipt_url", "metadata"]
+    __properties: ClassVar[List[str]] = ["event", "timestamp", "transaction_id", "status", "exception", "currency_crypto", "currency_fiat", "amount_fiat", "amount_usd", "amount_crypto", "order_id", "receipt_url", "metadata"]
 
     @field_validator('event')
     def event_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['payment.created', 'payment.pending', 'payment.completed', 'payment.overpaid', 'payment.partial', 'payment.expired', 'payment.failed']):
-            raise ValueError("must be one of enum values ('payment.created', 'payment.pending', 'payment.completed', 'payment.overpaid', 'payment.partial', 'payment.expired', 'payment.failed')")
+        if value not in set(['payment.created', 'payment.pending', 'payment.completed', 'payment.overpaid', 'payment.partial', 'payment.expired', 'payment.failed', 'payment.paid_late', 'payment.needs_review']):
+            raise ValueError("must be one of enum values ('payment.created', 'payment.pending', 'payment.completed', 'payment.overpaid', 'payment.partial', 'payment.expired', 'payment.failed', 'payment.paid_late', 'payment.needs_review')")
         return value
 
     model_config = ConfigDict(
@@ -116,6 +118,7 @@ class WebhookPayload(BaseModel):
             "timestamp": obj.get("timestamp"),
             "transaction_id": obj.get("transaction_id"),
             "status": obj.get("status"),
+            "exception": obj.get("exception"),
             "currency_crypto": obj.get("currency_crypto"),
             "currency_fiat": obj.get("currency_fiat") if obj.get("currency_fiat") is not None else FiatCurrency.USD,
             "amount_fiat": obj.get("amount_fiat"),
