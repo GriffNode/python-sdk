@@ -8,7 +8,7 @@
         "generatorName": "python",
         "inputSpec": "openapi.yaml",
         "output": ".",
-        "additionalProperties": { "packageName": "griffnode", "projectName": "griffnode", "packageVersion": "1.0.0", "packageUrl": "https://griffnode.com" }
+        "additionalProperties": { "packageName": "griffnode", "projectName": "griffnode", "packageVersion": "1.1.0", "packageUrl": "https://griffnode.com" }
       }
     }
   }
