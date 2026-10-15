@@ -40,6 +40,7 @@ docs/Pagination.md
 docs/PaymentSplit.md
 docs/Plan.md
 docs/PlanTier.md
+docs/RecurringWebhookPayload.md
 docs/SystemApi.md
 docs/Transaction.md
 docs/TransactionEnvelope.md
@@ -97,6 +98,7 @@ griffnode/models/pagination.py
 griffnode/models/payment_split.py
 griffnode/models/plan.py
 griffnode/models/plan_tier.py
+griffnode/models/recurring_webhook_payload.py
 griffnode/models/transaction.py
 griffnode/models/transaction_envelope.py
 griffnode/models/transaction_exception.py
@@ -110,5 +112,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_transaction_exception.py
+test/test_recurring_webhook_payload.py
 tox.ini
