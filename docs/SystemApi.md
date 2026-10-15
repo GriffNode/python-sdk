@@ -71,7 +71,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **hosted_checkout_redirect**
-> hosted_checkout_redirect(pk, amount, crypto, link=link)
+> hosted_checkout_redirect(pk, amount, crypto, currency=currency, link=link)
 
 Hosted-checkout redirect (browser flow, publishable key)
 
@@ -100,11 +100,12 @@ with griffnode.ApiClient(configuration) as api_client:
     pk = 'pk_example' # str | Publishable key, pk_live_… / pk_test_…
     amount = 'amount_example' # str | Fiat amount (≥ 1.00 USD equivalent).
     crypto = griffnode.CryptoSymbol() # CryptoSymbol | 
-    link = 'link_example' # str | Payment-link slug for attribution. (optional)
+    currency = USD # str | Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency. (optional) (default to USD)
+    link = 'link_example' # str | Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). (optional)
 
     try:
         # Hosted-checkout redirect (browser flow, publishable key)
-        api_instance.hosted_checkout_redirect(pk, amount, crypto, link=link)
+        api_instance.hosted_checkout_redirect(pk, amount, crypto, currency=currency, link=link)
     except Exception as e:
         print("Exception when calling SystemApi->hosted_checkout_redirect: %s\n" % e)
 ```
@@ -119,7 +120,8 @@ Name | Type | Description  | Notes
  **pk** | **str**| Publishable key, pk_live_… / pk_test_… | 
  **amount** | **str**| Fiat amount (≥ 1.00 USD equivalent). | 
  **crypto** | [**CryptoSymbol**](.md)|  | 
- **link** | **str**| Payment-link slug for attribution. | [optional] 
+ **currency** | **str**| Fiat currency of &#x60;amount&#x60;. Ignored when &#x60;link&#x60; is set: a payment link always uses its own amount and currency. | [optional] [default to USD]
+ **link** | **str**| Payment-link slug. The link&#39;s own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). | [optional] 
 
 ### Return type
 

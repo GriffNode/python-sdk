@@ -50,6 +50,7 @@ from griffnode.models.pagination import Pagination
 from griffnode.models.payment_split import PaymentSplit
 from griffnode.models.plan import Plan
 from griffnode.models.plan_tier import PlanTier
+from griffnode.models.recurring_webhook_payload import RecurringWebhookPayload
 from griffnode.models.transaction import Transaction
 from griffnode.models.transaction_envelope import TransactionEnvelope
 from griffnode.models.transaction_exception import TransactionException

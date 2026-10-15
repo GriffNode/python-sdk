@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from griffnode.models.crypto_symbol import CryptoSymbol
@@ -288,7 +288,8 @@ class SystemApi:
         pk: Annotated[StrictStr, Field(description="Publishable key, pk_live_… / pk_test_…")],
         amount: Annotated[StrictStr, Field(description="Fiat amount (≥ 1.00 USD equivalent).")],
         crypto: CryptoSymbol,
-        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug for attribution.")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.")] = None,
+        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -312,7 +313,9 @@ class SystemApi:
         :type amount: str
         :param crypto: (required)
         :type crypto: CryptoSymbol
-        :param link: Payment-link slug for attribution.
+        :param currency: Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.
+        :type currency: str
+        :param link: Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).
         :type link: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -340,6 +343,7 @@ class SystemApi:
             pk=pk,
             amount=amount,
             crypto=crypto,
+            currency=currency,
             link=link,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -368,7 +372,8 @@ class SystemApi:
         pk: Annotated[StrictStr, Field(description="Publishable key, pk_live_… / pk_test_…")],
         amount: Annotated[StrictStr, Field(description="Fiat amount (≥ 1.00 USD equivalent).")],
         crypto: CryptoSymbol,
-        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug for attribution.")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.")] = None,
+        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -392,7 +397,9 @@ class SystemApi:
         :type amount: str
         :param crypto: (required)
         :type crypto: CryptoSymbol
-        :param link: Payment-link slug for attribution.
+        :param currency: Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.
+        :type currency: str
+        :param link: Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).
         :type link: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -420,6 +427,7 @@ class SystemApi:
             pk=pk,
             amount=amount,
             crypto=crypto,
+            currency=currency,
             link=link,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -448,7 +456,8 @@ class SystemApi:
         pk: Annotated[StrictStr, Field(description="Publishable key, pk_live_… / pk_test_…")],
         amount: Annotated[StrictStr, Field(description="Fiat amount (≥ 1.00 USD equivalent).")],
         crypto: CryptoSymbol,
-        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug for attribution.")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.")] = None,
+        link: Annotated[Optional[StrictStr], Field(description="Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -472,7 +481,9 @@ class SystemApi:
         :type amount: str
         :param crypto: (required)
         :type crypto: CryptoSymbol
-        :param link: Payment-link slug for attribution.
+        :param currency: Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency.
+        :type currency: str
+        :param link: Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid).
         :type link: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -500,6 +511,7 @@ class SystemApi:
             pk=pk,
             amount=amount,
             crypto=crypto,
+            currency=currency,
             link=link,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -523,6 +535,7 @@ class SystemApi:
         pk,
         amount,
         crypto,
+        currency,
         link,
         _request_auth,
         _content_type,
@@ -557,6 +570,10 @@ class SystemApi:
         if crypto is not None:
             
             _query_params.append(('crypto', crypto.value))
+            
+        if currency is not None:
+            
+            _query_params.append(('currency', currency))
             
         if link is not None:
             
