@@ -33,6 +33,7 @@ class CryptoSymbol(str, Enum):
     ETH = 'ETH'
     USDT = 'USDT'
     USDC = 'USDC'
+    EURC = 'EURC'
     DAI = 'DAI'
     WBTC = 'WBTC'
     SHIB = 'SHIB'
