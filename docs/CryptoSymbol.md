@@ -18,6 +18,8 @@ Supported coin/token symbol. /cryptos/list is authoritative at runtime.
 
 * `USDC` (value: `'USDC'`)
 
+* `EURC` (value: `'EURC'`)
+
 * `DAI` (value: `'DAI'`)
 
 * `WBTC` (value: `'WBTC'`)
