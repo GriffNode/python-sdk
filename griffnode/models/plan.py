@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from griffnode.models.plan_tier import PlanTier
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class Plan(BaseModel):
     monthly_price_usd: Optional[Union[StrictFloat, StrictInt]] = None
     yearly_price_usd: Optional[Union[StrictFloat, StrictInt]] = None
     monthly_transaction_limit: Optional[StrictInt] = None
-    overage_cost_per_tx: Optional[Union[StrictFloat, StrictInt]] = None
+    overage_cost_per_tx: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Always 0. Plans have a hard monthly limit and no overage.")
     webhook_support: Optional[StrictBool] = None
     webhook_limit: Optional[StrictInt] = None
     ip_whitelist: Optional[StrictBool] = None

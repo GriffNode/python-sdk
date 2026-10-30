@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **monthly_price_usd** | **float** |  | [optional] 
 **yearly_price_usd** | **float** |  | [optional] 
 **monthly_transaction_limit** | **int** |  | [optional] 
-**overage_cost_per_tx** | **float** |  | [optional] 
+**overage_cost_per_tx** | **float** | Always 0. Plans have a hard monthly limit and no overage. | [optional] 
 **webhook_support** | **bool** |  | [optional] 
 **webhook_limit** | **int** |  | [optional] 
 **ip_whitelist** | **bool** |  | [optional] 

@@ -28,7 +28,7 @@ class AccountUsage(BaseModel):
     """ # noqa: E501
     monthly_transactions_used: Optional[StrictInt] = None
     monthly_transaction_limit: Optional[StrictInt] = Field(default=None, description="null = unlimited.")
-    overage_cost_per_tx: Optional[Union[StrictFloat, StrictInt]] = None
+    overage_cost_per_tx: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Always 0. Plans have a hard monthly limit and no overage.")
     __properties: ClassVar[List[str]] = ["monthly_transactions_used", "monthly_transaction_limit", "overage_cost_per_tx"]
 
     model_config = ConfigDict(

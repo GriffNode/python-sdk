@@ -24,6 +24,8 @@ Supported coin/token symbol. /cryptos/list is authoritative at runtime.
 
 * `WBTC` (value: `'WBTC'`)
 
+* `WETH` (value: `'WETH'`)
+
 * `SHIB` (value: `'SHIB'`)
 
 * `PEPE` (value: `'PEPE'`)
@@ -32,9 +34,7 @@ Supported coin/token symbol. /cryptos/list is authoritative at runtime.
 
 * `UNI` (value: `'UNI'`)
 
-* `AAVE` (value: `'AAVE'`)
-
-* `MKR` (value: `'MKR'`)
+* `LEO` (value: `'LEO'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

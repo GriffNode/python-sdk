@@ -104,7 +104,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '429': "Error",
         }
@@ -179,7 +178,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '429': "Error",
         }
@@ -254,7 +252,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '429': "Error",
         }
@@ -405,7 +402,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '409': "InlineObject",
             '429': "Error",
@@ -481,7 +477,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '409': "InlineObject",
             '429': "Error",
@@ -557,7 +552,6 @@ class TransactionsApi:
             '201': "TransactionEnvelope",
             '400': "Error",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
             '409': "InlineObject",
             '429': "Error",

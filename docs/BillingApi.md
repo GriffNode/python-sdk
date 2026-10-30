@@ -4,13 +4,13 @@ All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_billing_checkout**](BillingApi.md#create_billing_checkout) | **POST** /billing/checkout | Start a plan upgrade or account top-up
+[**create_billing_checkout**](BillingApi.md#create_billing_checkout) | **POST** /billing/checkout | Start a plan upgrade
 
 
 # **create_billing_checkout**
 > TransactionEnvelope create_billing_checkout(create_billing_checkout_request)
 
-Start a plan upgrade or account top-up
+Start a plan upgrade
 
 ### Example
 
@@ -46,7 +46,7 @@ with griffnode.ApiClient(configuration) as api_client:
     create_billing_checkout_request = griffnode.CreateBillingCheckoutRequest() # CreateBillingCheckoutRequest | 
 
     try:
-        # Start a plan upgrade or account top-up
+        # Start a plan upgrade
         api_response = api_instance.create_billing_checkout(create_billing_checkout_request)
         print("The response of BillingApi->create_billing_checkout:\n")
         pprint(api_response)
@@ -82,7 +82,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Billing transaction created. |  -  |
 **401** | Missing or invalid API key (UNAUTHORIZED). |  -  |
-**402** | Merchant platform balance too low for overage fees (INSUFFICIENT_BALANCE). |  -  |
 **403** | Key lacks permission — e.g. a publishable key on a secret-only endpoint, or plan too low (FORBIDDEN, USE_PAY_ENDPOINT, PLAN_UPGRADE_REQUIRED, NO_ACTIVE_PLAN). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

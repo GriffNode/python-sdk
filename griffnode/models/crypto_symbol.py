@@ -36,12 +36,12 @@ class CryptoSymbol(str, Enum):
     EURC = 'EURC'
     DAI = 'DAI'
     WBTC = 'WBTC'
+    WETH = 'WETH'
     SHIB = 'SHIB'
     PEPE = 'PEPE'
     LINK = 'LINK'
     UNI = 'UNI'
-    AAVE = 'AAVE'
-    MKR = 'MKR'
+    LEO = 'LEO'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

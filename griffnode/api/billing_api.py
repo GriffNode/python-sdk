@@ -54,7 +54,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TransactionEnvelope:
-        """Start a plan upgrade or account top-up
+        """Start a plan upgrade
 
 
         :param create_billing_checkout_request: (required)
@@ -92,7 +92,6 @@ class BillingApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TransactionEnvelope",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
         }
         response_data = self.api_client.call_api(
@@ -123,7 +122,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TransactionEnvelope]:
-        """Start a plan upgrade or account top-up
+        """Start a plan upgrade
 
 
         :param create_billing_checkout_request: (required)
@@ -161,7 +160,6 @@ class BillingApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TransactionEnvelope",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
         }
         response_data = self.api_client.call_api(
@@ -192,7 +190,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Start a plan upgrade or account top-up
+        """Start a plan upgrade
 
 
         :param create_billing_checkout_request: (required)
@@ -230,7 +228,6 @@ class BillingApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "TransactionEnvelope",
             '401': "Error",
-            '402': "Error",
             '403': "Error",
         }
         response_data = self.api_client.call_api(

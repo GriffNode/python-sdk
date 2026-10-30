@@ -557,7 +557,7 @@ class AccountApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ListBalances200Response:
-        """On-platform balances (for overage/top-up; NOT crypto settlement)
+        """(Deprecated) Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -581,6 +581,7 @@ class AccountApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /balances is deprecated.", DeprecationWarning)
 
         _param = self._list_balances_serialize(
             _request_auth=_request_auth,
@@ -621,7 +622,7 @@ class AccountApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ListBalances200Response]:
-        """On-platform balances (for overage/top-up; NOT crypto settlement)
+        """(Deprecated) Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -645,6 +646,7 @@ class AccountApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /balances is deprecated.", DeprecationWarning)
 
         _param = self._list_balances_serialize(
             _request_auth=_request_auth,
@@ -685,7 +687,7 @@ class AccountApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """On-platform balances (for overage/top-up; NOT crypto settlement)
+        """(Deprecated) Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -709,6 +711,7 @@ class AccountApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /balances is deprecated.", DeprecationWarning)
 
         _param = self._list_balances_serialize(
             _request_auth=_request_auth,
